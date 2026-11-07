@@ -646,7 +646,7 @@ td .sub{font-size:11.5px;color:var(--faint)}
       <div class="view" id="v-file"><div class="pub">
         <div class="pub-band"><img src="logo.png" alt=""><div><b>Report an electoral offence</b><span>Nigeria Police Force · official report portal</span></div></div>
         <div class="trust">
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>A ₦3,000 system maintenance fee is paid online when you submit</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>Serial number and QR code in seconds</div>
           <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>Progress updates by SMS</div>
           <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>Track your report with your serial number</div>
         </div>
@@ -701,10 +701,11 @@ td .sub{font-size:11.5px;color:var(--faint)}
               <div class="f" style="display:flex;align-items:flex-end"><span style="font-size:12px;color:var(--muted)">Verified through a licensed NIMC provider. Only the result is stored, not the number.</span></div>
             </div>
             <div class="decl" id="decl" style="margin-top:18px"><div class="bx"></div><div><b>Declaration of authenticity.</b> I declare that the information in this report is true to the best of my knowledge. I understand that making a false report is an offence and may lead to prosecution.</div></div>
+            <p style="font-size:11.5px;color:var(--faint);margin:10px 2px 0;line-height:1.5">By submitting, you agree to the <a href="#" id="tcLink" style="color:var(--muted);text-decoration:underline">terms and conditions</a> of Electoral Offence Track.</p>
           </div>
           <div class="pane" data-f="4">
             <div id="subBox"><h3 class="serif" style="font-size:22px;font-weight:600">Submitting your report</h3>
-            <p style="color:var(--muted);font-size:13px;margin:4px 0 18px">Your ₦3,000 system maintenance fee has been received. Your serial number is issued as soon as these checks pass.</p>
+            <p style="color:var(--muted);font-size:13px;margin:4px 0 18px">Your serial number is issued as soon as these checks pass.</p>
             <div class="card" style="box-shadow:none"><div class="card-b" style="padding:14px 18px"><div class="ssteps" id="subSteps" style="margin:0"></div></div></div></div>
             <div id="slipOut"></div>
           </div>
@@ -737,7 +738,7 @@ td .sub{font-size:11.5px;color:var(--faint)}
             <div class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5M12 11v6M9 14h6"/></svg></div>
             <h3>I want to report an election offence</h3>
             <p>For citizens, lawyers and accredited observers. Create an account with your phone number, then file and follow your reports.</p>
-            <ul><li>₦3,000 system maintenance fee per report, paid online by card, bank transfer or USSD when you submit. Up to 3 reports a day per phone number.</li><li>Sign in with a one-time code sent to your phone. No password to remember.</li><li>See all your reports and their progress in one place.</li><li>Your identity is shared only with the officers handling your report.</li></ul>
+            <ul><li>Report in a few minutes from your phone. Up to 3 reports a day per phone number.</li><li>Sign in with a one-time code sent to your phone. No password to remember.</li><li>See all your reports and their progress in one place.</li><li>Your identity is shared only with the officers handling your report.</li></ul>
             <div class="acts"><button class="btn btn-g" data-go2="csignup">Create an account</button><button class="btn btn-o" data-go2="csignin">Sign in</button></div>
             <div style="font-size:12.5px;color:var(--muted)">Only want to check a report? <a data-go2="track" style="color:var(--blue);font-weight:600;cursor:pointer">Track it with your serial number</a></div>
           </div>
@@ -919,12 +920,12 @@ td .sub{font-size:11.5px;color:var(--faint)}
 </div>
 
 <div class="modal" id="gwModal"><div class="gw">
-  <div class="gw-h"><div><b>System maintenance fee</b><br><span>Secure payment · demo</span></div><span>₦3,000.00</span></div>
+  <div class="gw-h"><div><b>Complete your submission</b><br><span>Secure payment · demo</span></div><span>₦3,000.00</span></div>
   <div class="gw-b">
-    <p style="font-size:12.5px;color:var(--muted);margin:0 0 14px">Every report carries a ₦3,000 system maintenance fee. Your report is submitted and your serial number issued as soon as payment is confirmed.</p>
+    <p style="font-size:12.5px;color:var(--muted);margin:0 0 14px">System maintenance fee, as set out in the terms and conditions. Your report is submitted and your serial number issued as soon as payment is confirmed.</p>
     <div class="gw-tabs" id="gwTabs"><button class="on">Card</button><button>Bank transfer</button><button>USSD</button></div>
     <div id="gwBody"></div>
-    <button class="btn btn-g" id="gwPay" style="width:100%;justify-content:center;margin-top:16px;height:46px">Pay ₦3,000 and submit</button>
+    <button class="btn btn-g" id="gwPay" style="width:100%;justify-content:center;margin-top:16px;height:46px">Pay and submit</button>
     <button id="gwCancel" style="width:100%;margin-top:10px;font-size:12.5px;color:var(--muted)">Cancel</button>
   </div>
 </div></div>
@@ -3356,7 +3357,7 @@ var FSTEPS=['Election','Offence and place','What happened','Your details','Your 
 function fShow(){$('#fStepper').innerHTML=FSTEPS.map(function(s,i){return '<div class="st '+(i===F.step?'on':i<F.step?'done':'')+'"><i>'+(i<F.step?'✓':i+1)+'</i>'+s+'</div>'}).join('');
  $$('#fCard .pane').forEach(function(p){p.classList.toggle('on',+p.dataset.f===F.step)});
  $('#fPrev').style.visibility=(F.step>0&&F.step<4)?'visible':'hidden';$('#fAct').style.display=F.step===4?'none':'flex';
- var nx=$('#fNext');nx.textContent=F.step===3?'Pay ₦3,000 and submit':'Continue';nx.style.display='';
+ var nx=$('#fNext');nx.textContent=F.step===3?'Submit report':'Continue';nx.style.display='';
  if(F.step===1)fPlace();if(F.step===2)fFiles()}
 function fElections(){$('#fElections').innerHTML=ELECTIONS.filter(function(e){return e.on}).slice(0,4).map(function(e){return '<button data-e="'+e.id+'" class="'+(F.election===e.id?'on':'')+'"><b>'+e.name+'</b><span>'+(e.date?dstr(e.date):'Date set per election')+'</span><br><small>Default: '+(e.level==='F'?'Force HQ':'State Command')+'</small></button>'}).join('');
  $$('#fElections button').forEach(function(b){b.onclick=function(){F.election=b.dataset.e;var e=ELECTIONS.filter(function(x){return x.id===F.election})[0];F.L=e.level;fElections();fLevel()}})}
@@ -3370,6 +3371,9 @@ $('#fState').onchange=function(){F.st=this.value;fPlace()};$('#fLga').onchange=f
 function fFiles(){$('#fFiles').innerHTML=F.files.map(function(f){return '<div class="file"><div class="fi2">'+f[2]+'</div><div><b>'+f[0]+'</b><span style="color:var(--faint)">'+f[1]+'</span></div><span class="pill p-green ok">Scanned, clean</span></div>'}).join('')}
 $('#fDrop').onclick=function(){F.files.push(['voice_note_witness.m4a','1.2 MB','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/></svg>']);fFiles();toast('File uploaded and checked for malware')};
 $('#otpBtn').onclick=function(){var b=this;b.textContent='Code sent';$('#otpSt').textContent='SMS sent to '+$('#fPhone').value.replace(/(\d{4})\s?(\d{3})\s?(\d{4})/,'$1 *** $3');var code='482190',i=0;setTimeout(function t(){var c=$$('#otp i');if(i<6){c[i].textContent=code[i];i++;setTimeout(t,120)}else{$('#otp').classList.add('ok');$('#otpSt').innerHTML='<b style="color:var(--green)">Phone verified</b>';F.otp=true}},700)};
+var TCHTML='<ol style="margin:0;padding-left:18px;font-size:13px;line-height:1.6;color:var(--muted);display:grid;gap:8px"><li>This service is for reporting electoral offences only. Challenges to election results go to the Election Petition Tribunals.</li><li>You must give true information. Making a false report is an offence and may lead to prosecution.</li><li>Each phone number may submit up to 3 reports a day.</li><li>You must deliver the signed hard copy, marked with your serial number, to the formation named on your slip within 72 hours. Reports with no hard copy within 72 hours expire.</li><li>A system maintenance fee of ₦3,000 applies to each report and is paid online when the report is submitted. The fee covers the running and maintenance of the platform and is not refundable once a serial number is issued.</li><li>Your personal data is processed under the Nigeria Data Protection Act 2023 and shared only with the officers handling your report, and with INEC where a case file is prepared for prosecution.</li></ol>';
+$('#tcLink').onclick=function(e){e.preventDefault();$('#mX').style.display='';$('#mT').textContent='Terms and conditions';$('#mB').innerHTML=TCHTML;$('#mModal').classList.add('on')};
+if(!$('#mX').onclick)$('#mX').onclick=function(){$('#mModal').classList.remove('on')};
 $('#decl').onclick=function(){F.decl=!F.decl;this.classList.toggle('on',F.decl)};
 $('#fPrev').onclick=function(){if(F.step>0){F.step--;fShow()}};
 $('#fNext').onclick=function(){if(F.step===3){if(!F.otp){toast('Verify your phone number first');$('#otpBtn').click();return}if(!F.decl){toast('Tick the declaration of authenticity to continue');$('#decl').classList.add('flash');return}var today=P.filter(function(p){return p.mine&&Date.now()-p.paid<864e5}).length;if(today>=3){toast('Daily limit reached: each phone number can submit up to 3 reports a day');return}F.today=today;$('#gwModal').classList.add('on');return}F.step++;fShow()};
@@ -3378,7 +3382,7 @@ function gwTab(i){$$('#gwTabs button').forEach(function(x,j){x.classList.toggle(
 $$('#gwTabs button').forEach(function(b,i){b.onclick=function(){gwTab(i)}});gwTab(0);
 $('#gwCancel').onclick=function(){$('#gwModal').classList.remove('on');toast('Payment cancelled. Your report has not been submitted')};
 $('#gwPay').onclick=function(){$('#gwModal').classList.remove('on');F.step=4;fShow();submitReport(F.today||0)};
-function subSteps(n,today){var S=[['Fee paid','₦3,000 system maintenance fee confirmed by the payment gateway'],['Phone verified','Code confirmed by SMS'],['Declaration recorded','Declaration of authenticity accepted'],['Daily limit checked',(today+1)+' of 3 reports today from this phone number'],['Serial number issued','Your report is now registered'],['SMS and email sent','Your slip has been sent to you']];$('#subSteps').innerHTML=S.map(function(x,i){return '<div class="ss '+(i<n?'on ok':i===n?'on run':'')+'" style="opacity:'+(i<=n?1:.35)+';color:var(--text)"><i style="border-color:#C9D0DC"></i><div><b>'+x[0]+'</b><span style="color:var(--muted)">'+x[1]+'</span></div></div>'}).join('')}
+function subSteps(n,today){var S=[['Payment confirmed','Confirmed by the payment gateway'],['Phone verified','Code confirmed by SMS'],['Declaration recorded','Declaration of authenticity accepted'],['Daily limit checked',(today+1)+' of 3 reports today from this phone number'],['Serial number issued','Your report is now registered'],['SMS and email sent','Your slip has been sent to you']];$('#subSteps').innerHTML=S.map(function(x,i){return '<div class="ss '+(i<n?'on ok':i===n?'on run':'')+'" style="opacity:'+(i<=n?1:.35)+';color:var(--text)"><i style="border-color:#C9D0DC"></i><div><b>'+x[0]+'</b><span style="color:var(--muted)">'+x[1]+'</span></div></div>'}).join('')}
 function submitReport(today){$('#subBox').style.display='block';$('#slipOut').innerHTML='';var k=0;subSteps(0,today);var t=setInterval(function(){k++;subSteps(k,today);if(k>=6){clearInterval(t);setTimeout(issue,250)}},450)}
 function issue(){var p=mkReport({L:F.L,st:F.st,lga:F.lga,ward:F.ward,unitNo:F.unit,election:F.election,cat:F.cat,desc:$('#fDesc').value,acc:$('#fAcc').value,name:$('#fName').value,phone:$('#fPhone').value.replace(/\s/g,''),paid:new Date(),when:new Date(),files:F.files.map(function(f){return f[0]}),mine:true});
  P.unshift(p);addAudit(p,'System','Fee paid, report submitted, serial issued','₦3,000 system maintenance fee · receipt '+p.receipt+' · phone verified · declaration accepted');F.p=p;saveMine();bump(p,true);$('#subBox').style.display='none';$('#slipOut').innerHTML=slipHtml(p);
@@ -3387,9 +3391,9 @@ function issue(){var p=mkReport({L:F.L,st:F.st,lga:F.lga,ward:F.ward,unitNo:F.un
  $('#slipReg').onclick=function(){setRole(p.L==='F'?'registry':'registry');go('registry');$('#rIn').value=p.serial;rCheck()};
  toast('Report submitted. Serial number '+p.serial+' sent by SMS')}
 function serialParts(s){var a=s.split('-'),lab=['Offence','Level','State','Year','Sequence','Check'];return '<div class="serial">'+a.map(function(x,i){return '<span'+(i===5?' class="cd"':'')+'>'+x+(i<5?'-':'')+'<em>'+lab[i]+'</em></span>'}).join('')+'</div>'}
-function slipHtml(p){var due=new Date(p.paid.getTime()+72*3600000);return '<div class="slip"><div class="wm"><span>SPECIMEN</span></div><div class="slip-h"><img src="'+LOGO+'" alt=""><div><h4>NIGERIA POLICE FORCE</h4><p>Electoral Offence Report · registration slip</p></div><span class="pill p-green">Registered · fee paid</span></div>'+
+function slipHtml(p){var due=new Date(p.paid.getTime()+72*3600000);return '<div class="slip"><div class="wm"><span>SPECIMEN</span></div><div class="slip-h"><img src="'+LOGO+'" alt=""><div><h4>NIGERIA POLICE FORCE</h4><p>Electoral Offence Report · registration slip</p></div><span class="pill p-green">Registered</span></div>'+
  serialParts(p.serial)+'<div style="font-size:12px;color:var(--muted)">Write this number on the top-right corner of every page of your signed report.</div>'+
- '<div class="slip-g"><div class="kv"><span>Addressed to</span><b>'+(p.L==='F'?'Force Headquarters (federal)':(p.st==='FC'?'FCT Command':SB[p.st].name+' State Command'))+'</b><span>Deliver hard copy to</span><div>'+deskFor(p.L,p.st)+'</div><span>Offence</span><div>'+p.cat+'</div><span>Polling unit</span><div class="mono">'+p.pu+' · '+p.lga+'</div><span>Citizen</span><div>'+esc(p.name)+'</div><span>Registered</span><div>'+dt(p.paid)+' WAT</div><span>Fee paid</span><div>₦3,000 system maintenance fee · <span class="mono">'+p.receipt+'</span></div></div><div class="qr">'+qrSvg(p.serial)+'</div></div>'+
+ '<div class="slip-g"><div class="kv"><span>Addressed to</span><b>'+(p.L==='F'?'Force Headquarters (federal)':(p.st==='FC'?'FCT Command':SB[p.st].name+' State Command'))+'</b><span>Deliver hard copy to</span><div>'+deskFor(p.L,p.st)+'</div><span>Offence</span><div>'+p.cat+'</div><span>Polling unit</span><div class="mono">'+p.pu+' · '+p.lga+'</div><span>Citizen</span><div>'+esc(p.name)+'</div><span>Registered</span><div>'+dt(p.paid)+' WAT</div><span>Receipt</span><div class="mono">'+p.receipt+'</div></div><div class="qr">'+qrSvg(p.serial)+'</div></div>'+
  '<div class="deadline">'+IC.warn.replace('<svg','<svg style="width:20px;height:20px;flex:none"')+'<div>Deliver the signed hard copy by <b>'+dt(due)+' WAT</b> (72 hours). You will get an SMS reminder after 48 hours. If it is not received in time, the report expires and must be submitted again.</div></div>'+
  '<div class="sent"><div>'+IC.ok+'SMS sent</div><div>'+IC.ok+'Email sent</div><div>'+IC.ok+'Receipt sent</div></div></div>'+
  '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px" class="no-print"><button class="btn btn-g" onclick="window.print()">Print slip</button><button class="btn btn-p" id="slipTrack">Track this report</button><button class="btn btn-o" id="slipReg">Demo: take it to the registry desk</button><button class="btn btn-o" id="slipAgain">File another</button></div>'}
@@ -3540,6 +3544,13 @@ $('#cuDone').onclick=function(){CU={name:$('#cuName').value.trim(),phone:$('#cuP
 // citizen sign in
 $('#ciSend').onclick=function(){if($('#ciPhone').value.replace(/\D/g,'').length<11){toast('Enter an 11-digit phone number');return}$('#ciStep1').style.display='none';$('#ciStep2').style.display='block';$('#ciTo').textContent=mask($('#ciPhone').value);toast('Code sent by SMS');otpFill('#ciOtp',function(){$('#ciDone').disabled=false})};
 $('#ciDone').onclick=function(){var ph=$('#ciPhone').value.replace(/\s/g,'');if(!CU||CU.phone!==ph)CU={name:CU&&CU.phone===ph?CU.name:'Adaeze Nwankwo',phone:ph,mail:''};try{localStorage.setItem('eotrack-user',JSON.stringify(CU))}catch(e){}addAudit(null,CU.name,'Citizen signed in','OTP verified');$('#ciStep1').style.display='block';$('#ciStep2').style.display='none';$('#ciDone').disabled=true;setRole('citizen');toast('Signed in')};
+function showTC(first){if(!CU||CU.tc)return;$('#mT').textContent='Terms and conditions';$('#mX').style.display='none';
+$('#mB').innerHTML='<p style="font-size:13px;color:var(--text);margin:0 0 12px">'+(first?'Welcome. Before you continue, please read and accept the terms and conditions of Electoral Offence Track.':'Please read and accept the terms and conditions to continue.')+'</p>'+TCHTML+'<div style="display:flex;gap:10px;justify-content:flex-end;margin-top:18px"><button class="btn btn-o" id="tcNo">Decline and sign out</button><button class="btn btn-g" id="tcAgree">I agree</button></div>';
+$('#mModal').classList.add('on');
+$('#tcAgree').onclick=function(){CU.tc=new Date().toISOString();try{localStorage.setItem('eotrack-user',JSON.stringify(CU))}catch(e){}addAudit(null,CU.name,'Terms and conditions accepted','on '+(first?'sign-up':'first sign-in'));$('#mModal').classList.remove('on');$('#mX').style.display='';toast('Thank you. You can now file and follow your reports')};
+$('#tcNo').onclick=function(){$('#mModal').classList.remove('on');$('#mX').style.display='';signOut()}}
+(function(){var a=$('#cuDone').onclick;$('#cuDone').onclick=function(){a.apply(this,arguments);showTC(true)};var b=$('#ciDone').onclick;$('#ciDone').onclick=function(){b.apply(this,arguments);showTC(false)}})();
+
 // my reports
 function renderMine(){$('#mineHello').textContent=CU?'Welcome, '+CU.name.split(' ')[0]:'Your reports';var L=P.filter(function(p){return p.mine});
  $('#mineList').innerHTML=L.length?L.map(function(p){return '<div class="pcard" data-t="'+p.serial+'"><div><div class="ptag">'+p.serial+'</div><div class="meta">'+p.cat+' · '+(p.L==='F'?'Force Headquarters':(p.st==='FC'?'FCT Command':SB[p.st].name+' State Command'))+' · filed '+dstr(p.paid)+'</div></div>'+statusPill(p)+'</div>'}).join(''):'<div class="card"><div class="card-b" style="text-align:center;padding:40px"><h3 class="serif" style="font-size:20px;font-weight:600">No reports yet</h3><p style="font-size:13px;color:var(--muted);margin:6px 0 16px">When you file a report, it appears here with its progress.</p><button class="btn btn-g" data-go2="file">File your first report</button></div></div>';
@@ -3567,7 +3578,7 @@ var TOUR=[
  ['guest','welcome',null,'Front door','Two ways in','Citizens create an account with their phone number. Officers and partners sign in with a named account, a password and a code from an authenticator app.'],
  ['guest','csignup',null,'Citizen account','Sign up with a phone number','No password to remember. A one-time code is sent by SMS each time, and the citizen accepts the privacy notice before anything is stored.'],
  ['citizen','file',0,'Citizen','A citizen reports an electoral offence','They choose the election and who should handle it: Force Headquarters for presidential matters, the State Command for the rest.'],
- ['citizen','file',3,'Submit','Pay the fee, registered in seconds','The citizen pays a ₦3,000 system maintenance fee online by card, bank transfer or USSD. Once payment is confirmed, the serial number is issued at once and sent by SMS with a receipt. Each phone number can submit up to 3 reports a day.'],
+ ['citizen','file',3,'Submit','Registered in seconds','Once the phone is verified, the declaration is ticked and the terms are accepted, the serial number is issued at once and sent by SMS. Each phone number can submit up to 3 reports a day.'],
  ['registry','registry',null,'Registry','The hard copy meets the system','The registry officer scans or types the serial number. Typos, invented numbers and reports meant for another command are rejected on the spot, even offline. Try the sample buttons.'],
  ['guest','ssignin',null,'Officer sign in','Two-factor sign-in for every officer','Every officer, INEC liaison and platform admin has a named account with a password and an authenticator code. Pick a demo account to see the role they land in.'],
  ['cmd','dash',null,'Commander','The Commissioner sees the whole command, live','Every report from payment to outcome. Reports whose hard copy does not arrive within 72 hours expire automatically. Stalled cases are flagged.'],
